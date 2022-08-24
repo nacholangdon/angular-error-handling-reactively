@@ -1,0 +1,13 @@
+<ng-container *ngIf="!isLoading; else loading">
+  <div *ngIf="user">
+    <h2>Success</h2>
+    <p>{{ user }}</p>
+  </div>
+
+  <div *ngIf="hasError">
+    <h2>Error</h2>
+    <p>{{ error }}</p>
+  </div>
+</ng-container>
+
+<ng-template #loading> Loading... </ng-template>

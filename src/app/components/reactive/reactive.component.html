@@ -1,0 +1,10 @@
+<div *ngIf="user2$ | async as user; else loading">
+  <h2>Success stream</h2>
+  <pre>{{ user | json }}</pre>
+</div>
+<div *ngIf="user2Error$ | async as error">
+  <h2>Error stream</h2>
+  <p>{{ error }}</p>
+</div>
+
+<ng-template #loading> Loading... </ng-template>

@@ -1,0 +1,13 @@
+<ng-container
+  *ngIf="{ user: user3$ | async, userError: user3Error$ | async } as vm"
+>
+  <div *ngIf="!vm.userError && vm.user as user; else loading">
+    <h2>Success stream</h2>
+    <pre>{{ user | json }}</pre>
+  </div>
+  <div *ngIf="vm.userError as error">{{ error }}</div>
+
+  <ng-template #loading>
+    <div *ngIf="!vm.userError">Loading...</div>
+  </ng-template>
+</ng-container>

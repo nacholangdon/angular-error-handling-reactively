@@ -1,0 +1,39 @@
+<h1>Async errors</h1>
+
+<div style="display: flex; justify-content: flex-start;">
+  <div
+    style="width: 25%; padding: 25px; margin: 10px;"
+    [ngStyle]="{ 'background-color': !hasError1 ? 'aquamarine' : 'crimson' }"
+  >
+    <h2>Imperative Approach</h2>
+    <app-imperative (hasErrorEvent)="hasError1 = $event"></app-imperative>
+  </div>
+
+  <div
+    style="width: 25%; padding: 25px; margin: 10px;"
+    [ngStyle]="{ 'background-color': !hasError2 ? 'aquamarine' : 'crimson' }"
+  >
+    <h2>Imperative Approach (error)</h2>
+    <app-imperative-error
+      (hasErrorEvent)="hasError2 = $event"
+    ></app-imperative-error>
+  </div>
+
+  <div
+    style="width: 25%; padding: 25px; margin: 10px;"
+    [ngStyle]="{ 'background-color': !hasError3 ? 'bisque' : 'crimson' }"
+  >
+    <h2>Reactive Approach</h2>
+    <app-reactive (hasErrorEvent)="hasError3 = $event"></app-reactive>
+  </div>
+
+  <div
+    style="width: 25%; padding: 25px; margin: 10px;"
+    [ngStyle]="{ 'background-color': !hasError4 ? 'cadetblue' : 'crimson' }"
+  >
+    <h2>Reactive Approach with view model</h2>
+    <app-reactive-improved
+      (hasErrorEvent)="hasError4 = $event"
+    ></app-reactive-improved>
+  </div>
+</div>
